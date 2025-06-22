@@ -3,7 +3,7 @@ const InfoGrid = ({ data }) => (
     {data.map((item, index) => (
       <div key={index}>
         <p className="text-gray-500 text-xs font-semibold">{item.label}</p>
-        <p className={`font-medium ${item.highlight ? 'text-red-600' : ''} font-bold text-l`}>{item.value}</p>
+        <p className={`font-medium ${item.label == "Total Outstanding" || item.label == "Last Order Date" ? 'text-red-500' : ''} font-bold text-l`}>{item.value}</p>
       </div>
     ))}
   </div>

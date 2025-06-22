@@ -1,5 +1,5 @@
+import { GiHamburgerMenu } from "react-icons/gi";
 import InfoGrid from "./InfoGrid";
-
 const CustomerHeader = () => {
   const customerDetails = {
     name: "Burman Hospitality Pvt. Ltd.",
@@ -39,25 +39,33 @@ const CustomerHeader = () => {
   };
 
   return (
-    <div className="bg-white shadow px-1.5 py-3 rounded-sm mb-4 border-1 border-gray-500">
-      <h2 className="text-xl font-semibold">{customerDetails.name}</h2>
-      <div className="flex gap-2 flex-row items-center border-b-1 border-gray-500 pb-3 pt-1">
-        <div className="h-full">
-          <div className="flex items-center text-sm text-gray-500 gap-2 border-r-2 border-gray-600 max-w-fit pr-2">
-            {customerDetails.address.map((e, i) => (
-              <span key={i} className="flex items-center gap-1">
-                <span className="w-1.5 h-1.5 bg-gray-500 rounded-full" />
-                {e}
-              </span>
-            ))}
+    <div className="bg-white shadow px-1.5 rounded-sm mb-4 border-1 border-gray-500">
+      <div className="flex justify-between border-b-1 border-gray-500">
+        <div>
+          <h2 className="text-xl font-semibold">{customerDetails.name}</h2>
+        <div className="flex gap-2 flex-row items-center pb-3 pt-1">
+          <div className="h-full">
+            <div className="flex items-center text-sm text-gray-500 gap-2 border-r-2 border-gray-600 max-w-fit pr-2">
+              {customerDetails.address.map((e, i) => (
+                <span key={i} className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full" />
+                  {e}
+                </span>
+              ))}
+            </div>
           </div>
+          <div className="h-full  border-r-2 border-gray-600 pr-2 flex items-center">
+            <p className="text-sm text-gray-400">Created on: 1 Jul 2022</p>
+          </div>
+          <span className="bg-blue-100 text-blue-600 font-bold rounded-xl px-2 py-1 text-xs">
+            POSTPAID
+          </span>
         </div>
-        <div className="h-full  border-r-2 border-gray-600 pr-2 flex items-center">
-          <p className="text-sm text-gray-400">Created on: 1 Jul 2022</p>
         </div>
-        <span className="bg-blue-100 text-blue-600 font-bold rounded-xl px-2 py-1 text-xs">
-          POSTPAID
-        </span>
+        <div className="flex items-center gap-2">
+          <GiHamburgerMenu className="text-blue-400 text-2xl cursor-pointer" />
+          <button className="h-10 bg-blue-400 text-white text-xs px-4 rounded-lg font-semibold cursor-pointer">+ Raise Query</button>
+        </div>
       </div>
       <div className="flex items-center py-3 border-b-1 border-gray-500 pb-3">
         <div className="flex gap-4 border-r-2 border-gray-400 pr-30">
@@ -89,7 +97,7 @@ const CustomerHeader = () => {
           <div className="flex gap-10 items-center">
             {customerDetails.paymentDetails.paymentOverdue.map((e, i) => {
               return (
-                <div key={i} >
+                <div key={i}>
                   <p className="text-center font-semibold">{e.amount}</p>
                   <p className="text-center text-red-400 text-sm font-semibold">
                     {e.name}
