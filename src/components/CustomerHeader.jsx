@@ -1,6 +1,8 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import InfoGrid from "./InfoGrid";
+
 const CustomerHeader = () => {
+
   const customerDetails = {
     name: "Burman Hospitality Pvt. Ltd.",
     address: ["Delhi", "Central Delhi", "110002"],
@@ -67,8 +69,8 @@ const CustomerHeader = () => {
           <button className="h-10 bg-blue-400 text-white text-xs px-4 rounded-lg font-semibold cursor-pointer">+ Raise Query</button>
         </div>
       </div>
-      <div className="flex items-center py-3 border-b-1 border-gray-500 pb-3">
-        <div className="flex gap-4 border-r-2 border-gray-400 pr-30">
+      <div className="flex flex-col md:flex-row  md:items-center py-3 border-b-1 border-gray-500 pb-3 ">
+        <div className="flex gap-4 border-r-0 md:border-r-2 border-b-1 md:border-b-0 border-gray-400 pr-5 sm:pr-10 md:pr-30 pb-3 md:pb-0 ">
           <div>
             <p className="font-semibold">
               {customerDetails.paymentDetails.revenue}
@@ -89,12 +91,12 @@ const CustomerHeader = () => {
           </div>
         </div>
         <div className="flex">
-          <p className="text-red-400 font-semibold px-30">
+          <p className="text-red-400 font-semibold px-0 md:px-10 lg:px-30 pr-5 md:pr-0">
             Payment
             <br />
             Overdue
           </p>
-          <div className="flex gap-10 items-center">
+          <div className="flex gap-3 sm:gap-5 lg:gap-10 items-center">
             {customerDetails.paymentDetails.paymentOverdue.map((e, i) => {
               return (
                 <div key={i}>

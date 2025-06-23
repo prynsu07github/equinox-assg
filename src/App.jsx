@@ -4,7 +4,7 @@ import MainWindow from "./components/MainWindow";
 
 function App() {
   return (
-    <div class="p-10 pt-5">
+    <div class="p-10 pt-5 overflow-hidden">
       <CustomerHeader />
       <MainWindow/>
     </div>
